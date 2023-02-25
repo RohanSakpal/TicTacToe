@@ -1,0 +1,33 @@
+.dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000033;
+    .back-video {
+        height: calc(100vh - 60px);
+        width: 100vw;
+    }
+    .sub-dash {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 0 50px 0 50px;
+        
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid white;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 45px;
+            cursor: pointer;
+            text-shadow: -1px 0px 0px yellow, 1px 0px 0px yellow, 0px -1px 0px yellow, 0px 1px 0px yellow;
+        }
+        .box:hover {
+            color: yellow;
+        }
+    }
+}

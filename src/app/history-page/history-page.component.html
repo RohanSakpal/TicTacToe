@@ -1,1 +1,26 @@
-<p>history-page works!</p>
+<div class="container">
+    <h1>Your Statistics</h1>
+    <hr>
+    <div class="stat">
+        <h3>Win/Total : 6/10</h3>
+    </div>
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Opposition Player Name</th>
+            <th scope="col">Date-Time</th>
+            <th scope="col">Win/Lose</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr *ngFor="let stat of statList;let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{stat.opp_name}}</td>
+            <td>{{stat.date_time}}</td>
+            <td [ngClass]="{'winClass': stat.win_lose === 'Win', 'lossClass' : stat.win_lose === 'Loss' }">{{stat.win_lose}}</td>
+          </tr>
+        </tbody>
+    </table>
+</div>

@@ -20,5 +20,10 @@ export class DashboardComponent implements OnInit {
   practicePage() {
     this.router.navigate(['/practice']);
   }
-
+  statPage() {
+    this.router.navigate(['/history']);
+  }
+  liveGame() {
+    this.router.navigate(['/liveGame']);
+  }
 }

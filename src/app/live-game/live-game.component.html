@@ -1,0 +1,35 @@
+<div class="containerBx">
+    <h5>Select Friend</h5>
+    <hr>
+    <div class="selectFriend">
+        <span>You</span>
+          <span class="vs">VS</span>
+          <select name="friend" id="friend">
+            <option value="1">Kaustubh</option>
+            <option value="2">Rahul</option>
+            <option value="3">Ayush</option>
+            <option value="4">Amol</option>
+          </select>
+
+          <button class="btn btn-outline-success" (click)="newGame()">Play</button>
+          <button class="btn btn-outline-success" (click)="chat()">Chat</button>
+    </div>
+    <div class="playDash">
+        <main *ngIf="!winner && !isdraw">
+            <div *ngFor="let val of squares;let i=index" (click)="makeMove(i)" class="app-board">
+                    <button class="btnG" *ngIf="!value">{{val}}</button>
+                    <button class="btnG" *ngIf="value == 'X'">{{val}}</button>
+                    <button class="btnG" *ngIf="value == 'O'">{{val}}</button>
+            </div>
+        </main>
+        <div class="chatDash">
+            <div class="chatBox" *ngIf="isChat">
+                <p class="crossBtn" (click)="removeChat()">X</p>
+                <div class="cell">
+                    <p *ngFor="let msg of msgArr">{{msg}}</p>
+                </div>
+                <input type="text" placeholder="Enter Text" (change)="sendMsg($event)">
+            </div>
+        </div>
+    </div>
+</div>
